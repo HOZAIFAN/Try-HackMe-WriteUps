@@ -26,18 +26,6 @@ These writeups serve as proof of my hands-on experience in:
 
 ---
 
-## 🎯 Completed Rooms
-
-This section reflects all TryHackMe rooms I've successfully completed with detailed writeups and proof of exploitation.
-
-### Categories
-
-- **Active Directory** - Domain exploitation and privilege escalation
-- **Web Exploitation** - Application security testing
-- **Linux Privilege Escalation** - Path to root access
-- **Windows Exploitation** - System compromise techniques
-
----
 
 ## 🛠️ Common Tools
 
