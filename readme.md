@@ -58,22 +58,7 @@ Room-Name/
     └── exploit.py
 ```
 
-### Example Structure
 
-**Soupedecode-01 folder:**
-```
-Soupedecode-01/
-├── README.md
-├── writeup.pdf
-├── screenshots/
-│   ├── rid-enumeration.png
-│   ├── kerberoasting.png
-│   └── system-shell.png
-└── scripts/
-    └── enumeration.sh
-```
-
----
 
 ## ⚠️ Legal Disclaimer
 
@@ -113,7 +98,7 @@ Questions about a specific writeup or approach? Feel free to reach out.
 
 - **Email:** ssjutt2023@gmail.com
 - **University Email:** fa24-bcs-049@cuiatk.edu.pk
-- **TryHackMe:** [@hyena](https://tryhackme.com/p/hyena)
+- **TryHackMe:** [@hyena]
 - **University:** COMSATS University Islamabad, Attock Campus
 
 ---
