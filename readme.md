@@ -35,7 +35,16 @@ Room-Name/
 │   └── user-flag.png
 └── scripts/           # Custom scripts used during exploitation
     └── exploit.py
-
+Example: Soupedecode-01 folder structure
+Soupedecode-01/
+├── README.md
+├── writeup.pdf
+├── screenshots/
+│   ├── rid-enumeration.png
+│   ├── kerberoasting.png
+│   └── system-shell.png
+└── scripts/
+    └── enumeration.sh
 ⚠️ Legal Disclaimer
 All activities documented in this repository were performed in authorized TryHackMe lab environments for educational purposes only.
 Do not attempt these techniques on systems you don't own or have explicit permission to test. Unauthorized access to computer systems is illegal under various cybersecurity laws worldwide.
@@ -57,3 +66,4 @@ University: COMSATS University Islamabad, Attock Campus
 
 🙏 Acknowledgments
 Thanks to TryHackMe for providing excellent hands-on labs, and to the infosec community for sharing knowledge through tools, writeups, and discussions.
+
