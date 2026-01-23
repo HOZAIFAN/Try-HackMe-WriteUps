@@ -132,7 +132,7 @@ Because every hacker has a story. Every root shell has a lesson. Every vulnerabi
 
 ## 📖 Read the Full Write-up
 
-👉 **[Click here to dive deep into the complete exploitation journey](./writeup.md)**
+👉 https://github.com/HOZAIFAN/Try-HackMe-WriteUps/blob/main/GammingServer/Writeup/GamingServer%20-%20TryHackMe%20Room%20Write-up.pdf
 
 **Warning:** Contains detailed technical breakdowns, exact commands, and might make you rethink your server configurations. 
 
