@@ -8,7 +8,7 @@ Documentation of my journey through various TryHackMe rooms, focusing on penetra
 
 **Muhammad Hozaifa Naeem**  
 Cybersecurity Student | COMSATS University Islamabad, Attock Campus  
-TryHackMe: `hyena`
+TryHackMe: `hyena11`
 
 ---
 
