@@ -157,21 +157,99 @@ The challenge demonstrates how a single vulnerability (LFI) can cascade into com
 
 ---
 
+## 🔗 Attack Chain
+┌─────────────────┐
+│ Reconnaissance │
+│ (Ping Sweep, │
+│ OS Detection) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ Port Scanning │
+│ (Port 5000 open │
+│ Flask App) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ Directory Fuzzing│
+│ (/dashboard, │
+│ /login, etc) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ XSS Probing │
+│ (Profile page, │
+│ "Error loading │
+│ theme" hint) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ LFI Discovery │
+│ (/api/fetch_ │
+│ layout?layout=)│
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ File Enumeration│
+│ (/etc/passwd, │
+│ app.py, etc) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ Source Code │
+│ Analysis │
+│ (Hardcoded Key │
+│ Found!) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ Admin Endpoint │
+│ Exploitation │
+│ (/api/admin/ │
+│ export_db) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ Database Export │
+│ (valenfind.db) │
+└────────┬────────┘
+│
+▼
+┌─────────────────┐
+│ Flag Extraction │
+│ 🏁 THM{...} │
+└─────────────────┘
+
 
 ---
 
 📚 Lessons Learned
 For Attackers
 Always test file inclusion parameters - they're goldmines
+
 Error messages often leak critical information
+
 Source code disclosure leads to secret discovery
+
 Chain vulnerabilities - one hole leads to another
 
 For Defenders
 Never trust user input - validate everything
+
 Never hardcode credentials in source code
+
 Implement proper access controls for admin endpoints
+
 Use environment variables for all secrets
+
 Regular security code reviews are essential
 
 <h2>👤 Author<\h2>
