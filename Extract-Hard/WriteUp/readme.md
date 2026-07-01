@@ -40,7 +40,7 @@ A closer look showed the website was an Apache server running a project called "
 
 The homepage lists a couple of PDF books you can preview. Looking at the page's code showed exactly how the preview works: clicking a book sends its link to a file called `preview.php`, which then loads whatever link it was given.
 
-![The site's own code shows it builds a link like preview.php?url=... and loads it straight into the page.](images/Vulnebale_Code.png)
+<img src="Confirmend_SSRF.png">
 
 *The site's own code shows it builds a link like preview.php?url=... and loads it straight into the page.*
 
