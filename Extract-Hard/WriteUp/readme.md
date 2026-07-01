@@ -40,7 +40,7 @@ A closer look showed the website was an Apache server running a project called "
 
 The homepage lists a couple of PDF books you can preview. Looking at the page's code showed exactly how the preview works: clicking a book sends its link to a file called `preview.php`, which then loads whatever link it was given.
 
-<img src="Confirmend_SSRF.png">
+
 
 *The site's own code shows it builds a link like preview.php?url=... and loads it straight into the page.*
 
@@ -54,7 +54,7 @@ To confirm the bug was real, a listening tool was set up to catch any traffic co
 
 That address was placed inside the vulnerable link, and the request was sent.
 
-![Several hits came back almost instantly — proof the server really was following the link we gave it.](images/Confirmend_SSRF.png)
+<img src="Confirmend_SSRF.png">
 
 *Several hits came back almost instantly — proof the server really was following the link we gave it.*
 
@@ -66,7 +66,7 @@ With that confirmed, the SSRF bug was no longer a theory — it was ready to use
 
 Because the request comes from the server itself, pointing it at "127.0.0.1" (its own address) lets us see pages that are blocked from outside visitors. Testing this turned up a login page for a management area that wasn't linked anywhere on the public site.
 
-![A hidden management login page, only visible through the SSRF bug.](images/FoundMenagmentPortal.png)
+<img src="FoundMenagmentPortal.png">
 
 *A hidden management login page, only visible through the SSRF bug — visiting it directly gave an access-denied error.*
 
@@ -76,7 +76,7 @@ Because the request comes from the server itself, pointing it at "127.0.0.1" (it
 
 Continuing to explore the server's own network turned up another service, running on port 10000. This one was a completely separate application — a small API built with Next.js, a popular web framework.
 
-![A second internal-only application discovered on port 10000.](images/Found_Something_On_Port_10000.png)
+<img src="Found_Something_On_Port_10000.png">
 
 *A second internal-only application discovered on port 10000, reachable only from inside the server.*
 
@@ -94,7 +94,7 @@ The problem was reaching port 10000 at all — it isn't open to the outside worl
 
 With the tunnel running and the special header attached, the protected page finally opened up.
 
-![The protected page opens up — a maintenance message that leaks the first flag along with a working username and password.](images/Response_Recieved.png)
+<img src="Response_Recieved.png">
 
 *The protected page opens up — a maintenance message that leaks the first flag along with a working username and password.*
 
@@ -114,7 +114,7 @@ That value was changed from false to true, the cookie was updated in the browser
 
 ## Room Complete
 
-![The Extract room, finished.](images/Extracted_COmpleted.png)
+<img src="Extracted_COmpleted.png">
 
 *The Extract room, finished.*
 
