@@ -54,7 +54,7 @@ Confirming the database engine and version:
 
 With the injection confirmed, `UNION SELECT` was used to pull data out of other tables, including an `email_access` table holding usernames and passwords for the email portal on port 4346.
 
-![Username and password extracted via SQL injection](POC/Extracte_Username_and_passrod.png)
+(POC/Extracte Username and passrod.png)
 
 ![Final extracted credentials](POC/Credentials.png)
 
@@ -157,8 +157,8 @@ Completion confirmation:
 
 | Flag | Value |
 |---|---|
-| User / Web Flag | `thm{adb5b797ee0d01a8c052dbee46fbc065e8c52afd}` |
-| Root Flag | `thm{7f6b4d8aee9e1677a0db343ace5fff23fc5b5d3b}` |
+| User / Web Flag | `thm{adb5b797ee0d01a8c052dbee46f***65e8c52afd}` |
+| Root Flag | `thm{7f6b4d8aee9e1677a0db343ace5fff23f****5d3b}` |
 
 ---
 
