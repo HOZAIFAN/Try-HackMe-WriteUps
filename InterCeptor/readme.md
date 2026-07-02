@@ -47,7 +47,7 @@ ffuf -u http://10.48.187.93/FUZZ \
 
 Enumeration turned up an open, unauthenticated directory listing at `/assets/`:
 
-![Open directory listing of /assets](assets/FoundAssets.png)
+![Open directory listing of /assets](POC/FoundAssets.png)
 
 ```
 Index of /assets
