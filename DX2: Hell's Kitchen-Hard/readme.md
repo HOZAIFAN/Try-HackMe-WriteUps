@@ -15,7 +15,7 @@ The full chain, in short:
 5. Move from `gilbert` → `sandra` → `jojo` using leaked notes, files, and an image.
 6. Abuse a misconfigured `sudo` NFS mount (`no_root_squash`) to get a root shell and the final flag.
 
-All supporting exploit code referenced below lives in the [`Exploit/`](../Exploit) folder, and every screenshot referenced below lives in the [`POC/`](../POC) folder.
+All supporting exploit code referenced below lives in the [`Exploit/`](../Exploit) folder, and every screenshot referenced below lives in the [`POC/`](/POC) folder.
 
 ---
 
